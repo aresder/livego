@@ -143,13 +143,6 @@ type streams struct {
 	Players    []stream `json:"players"`
 }
 
-
-// http://127.0.0.1:8090/
-func (server *Server) Index(w http.ResponseWriter, req *http.Request) {
-	fs := http.FileServer(http.Dir("./static"))
-
-	http.Handle("/", fs)
-}
 //http://127.0.0.1:8090/stat/livestat
 func (server *Server) GetLiveStatics(w http.ResponseWriter, req *http.Request) {
 	res := &Response{
